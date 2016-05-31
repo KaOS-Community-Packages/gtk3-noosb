@@ -7,6 +7,9 @@ url='https://blogs.igalia.com/carlosgc/category/free-software/gnome/'
 license=('CC0')
 depends=('gtk3')
 makedepends=('coreutils')
+provides=("${pkgname//-git/}=$pkgver")
+replaces=("${pkgname//-git/}<=$pkgver")
+conflicts=("${pkgname//-git/}<=$pkgver")
 
 package() {
 	install -d "$pkgdir"/etc/profile.d
